@@ -51,7 +51,7 @@ public class StudentController {
 		@RequestMapping("deleteStudentInfo")
 		public String deleteStudentInfo() {
 			service.deleteStudent();
-			return "成功删除一个student信息";
+			return "成功删除一条学生信息";
 		}
 		
 		/**
@@ -60,8 +60,8 @@ public class StudentController {
 		 */
 		@RequestMapping("deleteStudentInfoById")
 		public String deleteStudentInfoById() {
-			service.deleteStudentById(17);
-			return "成功通过id删除一个学生信息";
+			service.deleteStudentById(22);
+			return "成功通过Id删除一个学生信息";
 		}
 		
 		/**
@@ -71,11 +71,11 @@ public class StudentController {
 		@RequestMapping("deleteStudentInfoByEntity")
 		public String deleteStudentInfoByEntity() {
 			StudentEntity stu = new StudentEntity();
-			stu.setSid(18);
-			stu.setSname("孙悟空");
+			stu.setSid(23);
+			stu.setSname("");
 			stu.setSage(new Date(new java.util.Date().getTime()));
 			stu.setSsex("男");
 			service.deleteStudentByEntity(stu);
-			return "成功通过Entity删除一个学生信息";
+			return "成功通过实体删除一个学生信息";
 		}
 }

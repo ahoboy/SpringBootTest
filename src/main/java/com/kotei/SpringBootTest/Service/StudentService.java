@@ -27,28 +27,28 @@ public class StudentService {
 		stu.setSsex("男");
 		
 		dao.save(stu);
-		System.out.println("已新增一条studnet信息");
+		System.out.println("已新增一条学生信息");
 	}
 	
 	public void updateStudent() {
 		StudentEntity stu = new StudentEntity();
-		stu.setSid(17);
+		stu.setSid(5);
 		stu.setSname("龙女");
 		stu.setSage(new Date(new java.util.Date().getTime()));
 		stu.setSsex("女");
 		
 		dao.save(stu);
-		System.out.println("已修改一条student信息");
+		System.out.println("已修改一条学生信息");
 	}
 	
 	public void deleteStudent() {	
-		dao.deleteById(17);
-		System.out.println("已删除一条student信息");
+		dao.deleteById(18);
+		System.out.println("已删除一条学生信息");
 	}
 	
 	public void deleteStudentById(int id) {	
 		dao.deleteById(id);
-		System.out.println("已删除id为"+ id+"的student信息");
+		System.out.println("已删除id为"+ id+"的学生信息");
 	}
 	
 	public void deleteStudentByEntity(StudentEntity stu) {
