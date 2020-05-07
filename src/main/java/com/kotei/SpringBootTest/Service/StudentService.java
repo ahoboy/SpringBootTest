@@ -15,9 +15,10 @@ public class StudentService {
 	@Autowired
 	StudentDao dao;
 	
-	public void getStudentById() {
-		StudentEntity stu = dao.findById(2);
+	public StudentEntity getStudentById(int id) {
+		StudentEntity stu = dao.findById(id);
 		System.out.println("这是从数据库中取出的数据：" + stu.getSname());
+		return stu;
 	}
 	
 	public void insertStudent() {
@@ -26,6 +27,11 @@ public class StudentService {
 		stu.setSage(new Date(new java.util.Date().getTime()));
 		stu.setSsex("男");
 		
+		dao.save(stu);
+		System.out.println("已新增一条学生信息");
+	}
+	
+	public void insertStudent(StudentEntity stu) {
 		dao.save(stu);
 		System.out.println("已新增一条学生信息");
 	}
@@ -40,6 +46,12 @@ public class StudentService {
 		dao.save(stu);
 		System.out.println("已修改一条学生信息");
 	}
+	
+	public void updateStudentP(StudentEntity stu) {
+		dao.save(stu);
+		System.out.println("已修改一条学生信息");
+	}
+	
 	
 	public void deleteStudent() {	
 		dao.deleteById(18);

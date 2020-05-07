@@ -30,6 +30,20 @@ public class StudentEntity {
 	@Column(name="Ssex")
 	private String ssex;
 	
+	public StudentEntity(int id, String name, java.sql.Date age, String sex) {
+		this.sid = id;
+		this.sname = name;
+		this.sage = age;
+		this.ssex = sex;
+	}
+
+	public StudentEntity() {
+		sid = null;
+		sname = null;
+		sage = null;
+		ssex = null;
+	}
+
 	public Integer getSid() {
 		return sid;
 	}
@@ -61,5 +75,11 @@ public class StudentEntity {
 	public void setSsex(String ssex) {
 		this.ssex = ssex;
 	}
+
+	@Override
+	public String toString() {
+		return "StudentEntity [sid=" + sid + ", sname=" + sname + ", sage=" + sage + ", ssex=" + ssex + "]";
+	}
+
 
 }
